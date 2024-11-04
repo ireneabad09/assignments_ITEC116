@@ -2,11 +2,11 @@ import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller('fibonacci')
 export class FibonacciController {
-    @Get(':n') // Specify the route parameter
-    getFibonacci(@Param('n') n: string): { sequence: string } { // Change the type to string
+    @Get(':n') 
+    getFibonacci(@Param('n') n: string): { sequence: string } { 
         const num = parseInt(n, 10);
         const sequence = this.calculateFibonacci(num);
-        return { sequence: sequence.join(', ') }; // Join the sequence into a string
+        return { sequence: sequence.join(', ') }; 
     }
 
     private calculateFibonacci(n: number): number[] {
